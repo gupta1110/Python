@@ -4,3 +4,98 @@ b) scientific calculation
 c) conversion in binary, octal, hexadecimal, decimal
 d) temperature conversion
 e) length conversion
+
+ANSWER:-
+
+import math as m;
+def basic_airthmetic():
+    n1 = int(input("Enter the first number: "))
+    n2 = int(input("Enter the second number: "))
+    operator = input("Enter the operator (+, -, *, /): ")
+    
+    if operator == '+':
+        print("Result:", n1 + n2)
+    elif operator == '-':
+        print("Result:", n1 - n2)
+    elif operator == '*':
+        print("Result:", n1 * n2)
+    elif operator == '/':
+        if n2 == 0:
+            print("Error: Cannot divide by zero!")
+        else:
+            print("Result:", n1 / n2)
+    else:
+        print("Invalid operator")
+        
+
+def scientific_calculator():
+    num = float(input("Enter a number: "))
+    print("Square root:", m.sqrt(num))
+    print("sin :", m.sin(num))
+    print("cos:", m.cos(num))
+    
+    
+def conversion_menu():
+    print("1. Binary")
+    print("2. Octal")
+    print("3. Hexadecimal")
+    choice = int(input("Enter your choice: "))
+    no = int(input("Enter a number: "))
+    if choice == 1:
+        print("Binary:", bin(no))
+    elif choice == 2:
+        print("Octal:", oct(no))
+    elif choice == 3:
+        print("Hexadecimal:", hex(no))
+    else:
+        print("Invalid choice")
+        
+    
+def temperature_conversion():
+    print("convert celsius to fahrenhiet:")
+    c=float(input("Enter celsius:"))
+    print("celsius is:",c)
+    f = ((9/5) * c) + 32
+    print("fahrenhiet is:",round(f,2))
+    print()
+    print("convert fahrenhiet to celsius:")
+    f=float(input("Enter fahrenhiet:"))
+    print("fahrenhiet is:",f)
+    c=f*(5/9)-32
+    print("Celsius is:",round(c,2))
+    
+    
+def length_conversion():
+    length = float(input("Enter length in M: "))
+    print("Length in kM:", length / 1000)
+    print("Length in CM:", length * 100)
+    print("Length in MM:", length * 1000)
+    
+        
+
+def main():
+    while True:
+        print("\nBasic Calculator")
+        print("1. Basic Arithmetic")
+        print("2. Scientific Calculator")
+        print("3. Conversion (Binary, Octal, Hexadecimal)")
+        print("4. Temperature Conversion")
+        print("5. Length Conversion")
+        print("6. Exit")
+
+        choice = input("Enter your choice (1-6): ")
+
+        if choice == '1':
+            basic_airthmetic()
+        elif choice == '2':
+            scientific_calculator()
+        elif choice == '3':
+            conversion_menu()
+        elif choice == '4':
+            temperature_conversion()
+        elif choice == '5':
+            length_conversion()
+        else:
+            print("Invalid choice try again")
+
+main()
